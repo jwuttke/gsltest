@@ -6,6 +6,10 @@ if(MSYS)
 set(GSL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/../include)
 set(GSL_CBLAS_LIBRARY ${CMAKE_SOURCE_DIR}/../lib/libgslcblas.dll.a)
 set(GSL_LIBRARY ${CMAKE_SOURCE_DIR}/../lib/libgsl.dll.a)
+install(FILES
+    ${CMAKE_SOURCE_DIR}/../msys-gsl.dll
+    ${CMAKE_SOURCE_DIR}/../msys-gslcblas.dll
+    DESTINATION ${destination_lib} COMPONENT Libraries)
 
 else()
 find_package(GSL REQUIRED)
