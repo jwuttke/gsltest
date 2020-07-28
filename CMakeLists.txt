@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 
 project(GSL_FFT)
 
-if(WIN32)
+if(MSYS)
 set(GSL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/../include)
 set(GSL_CBLAS_LIBRARY ${CMAKE_SOURCE_DIR}/../lib/libgslcblas.dll.a)
 set(GSL_LIBRARY ${CMAKE_SOURCE_DIR}/../lib/libgsl.dll.a)
