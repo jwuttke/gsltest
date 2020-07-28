@@ -2,13 +2,9 @@ cmake_minimum_required(VERSION 3.12)
 
 project(GSL_FFT)
 
-SET( CMAKE_CXX_COMPILER "/usr/bin/g++" )
-SET(CMAKE_CXX_FLAGS "-std=c++11 -Wuninitialized -Wunused-function -Wunused-label -Wunused-value -Wunused-variable")
+find_package(GSL REQUIRED)
 
-include_directories(src)
-
-link_directories(/usr/lib)
-
-add_executable (FFTExample src/FFTExample.cpp)
-
-target_link_libraries(FFTExample gsl gslcblas)
+add_executable (demo src/FFTExample.cpp)
+target_include_directories(demo PUBLIC ${GSL_INCLUDE_DIR})
+# target_link_directories(demo /usr/lib)
+target_link_libraries(demo ${GSL_CBLAS_LIBRARY} ${GSL_LIBRARY})
