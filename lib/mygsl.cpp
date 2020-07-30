@@ -4,7 +4,7 @@
 #include <gsl/gsl_fft_real.h>
 #include <gsl/gsl_fft_halfcomplex.h>
 
-int main (void)
+int mygsl()
 {
     const int n = 100;
     int i;
