@@ -9,6 +9,8 @@ target_include_directories(${lib} PUBLIC ${GSL_INCLUDE_DIR})
 target_link_libraries(${lib} ${GSL_LIBRARIES}) # ${GSL_CBLAS_LIBRARY} ${GSL_LIBRARY}`)
 set(${lib}_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR} PARENT_SCOPE)
 set(${lib}_LIBRARY ${lib} PARENT_SCOPE)
+set_target_properties(${lib} PROPERTIES PREFIX _lib SUFFIX .dll)
+set(${lib}_LIBRARY_TYPE SHARED)
 
 if(WIN32)
     message(STATUS "YES WE ARE UNDER WIN32")
