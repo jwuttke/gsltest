@@ -1,5 +1,5 @@
 add_executable (demo main.cpp)
-target_include_directories(demo PUBLIC ${GSL_INCLUDE_DIR})
+target_include_directories(demo PUBLIC ${mygsl_INCLUDE_DIRS})
 target_link_libraries(demo mygsl) # ${GSL_CBLAS_LIBRARY} ${GSL_LIBRARY})
 
 if(WIN32)
